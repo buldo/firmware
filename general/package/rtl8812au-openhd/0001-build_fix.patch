@@ -1,0 +1,25 @@
+diff --git a/Makefile b/Makefile
+index cab606f..d5e0f27 100755
+--- a/Makefile
++++ b/Makefile
+@@ -25,7 +25,7 @@ EXTRA_CFLAGS += -Wno-cast-function-type
+ EXTRA_CFLAGS += -Wno-date-time
+ EXTRA_CFLAGS += -Wno-misleading-indentation
+ EXTRA_CFLAGS += -Wno-uninitialized
+-CFLAGS += -Wno-declaration-after-statement
++EXTRA_CFLAGS += -Wno-declaration-after-statement
+ # Relax some warnings from '-Wextra' so we won't get flooded with warnings
+ EXTRA_CFLAGS += -Wno-sign-compare
+ #EXTRA_CFLAGS += -Wno-missing-field-initializers
+@@ -302,9 +302,9 @@ _BTC_FILES += hal/btc/halbtc8192e1ant.o \
+ endif
+ 
+ ifeq ($(CONFIG_PLATFORM_ARM64_RPI), y)
+-include $(TopDIR)/drivers/net/wireless/rtl8812au/hal/phydm/phydm.mk
++include $(src)/drivers/net/wireless/rtl8812au/hal/phydm/phydm.mk
+ else
+-include $(TopDIR)/hal/phydm/phydm.mk
++include $(src)/hal/phydm/phydm.mk
+ endif
+ 
+ ########### HAL_RTL8812A_RTL8821A #################################
