@@ -1,0 +1,5 @@
+config BR2_PACKAGE_OPENHD_AIR_FILES
+    bool "openhd-air-files"
+
+    help
+      OpenHD package files for air
